@@ -1,5 +1,5 @@
 title: Hangul # your site title
-author: L8-Team
+author: l8-team
 email: # email for form submission, you also have to change it in _js/scripts.js
 description: > # this means to ignore newlines until "baseurl:"
   Test
@@ -9,7 +9,7 @@ twitter_username: # replace with your_twitter_username or comment to remove link
 github_username:  # replace with your_github_username or comment to remove link from footer
 instagram_username: # replace with your_instagram_username or comment to remove link from footer
 social:
-  name: L8-Team
+  name: l8-team
   links:
 
 disqus:
