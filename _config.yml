@@ -1,42 +1,20 @@
-title: Hangul # your site title
-author: L8-Team
-email: # email for form submission, you also have to change it in _js/scripts.js
-description: > # this means to ignore newlines until "baseurl:"
+# Site settings
+title: Mauricio Urraco
+description: Jekyll Theme Minimal Resume
+# baseurl: "" # the subpath of your site, e.g. /blog
+# url: "localhost:3000" # the base hostname & protocol for your site e.g. http://willianjusten.com.br
 
-baseurl: "/2019-2-OSS-L8" # the subpath of your site, e.g. /blog
-url: "https://19-2-SKKU-OSS.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: # replace with your_twitter_username or comment to remove link from footer
-github_username:  # replace with your_github_username or comment to remove link from footer
-instagram_username: # replace with your_instagram_username or comment to remove link from footer
-social:
-  name: L8-Team
-  links:
+# User settings
+username: Mauricio Urraco
+user_description: I\'m a nomad Software Engineer, always searching for the next challenge; no task is too scary nor too difficult. Lately I have been immersed in the <b>crypto-world</b> working for Radix, a London based startup trying to create the next massive scalable DLT. I'm one of the two guys behind all the JS related stuff. Visit my blog here <a href="https://mauriciourraco.com" target="_blank">https://mauriciourraco.com</a>
+user_title: Software Engineer
+email: mauriurraco@gmail.com
+# twitter_username: lorem_ipsum
+# github_username:  lorem_ipsum
+# gplus_username:  lorem_ipsum
 
-disqus:
-  shortname: # to enable comments replace with your_disqus_shortname
+# Google-analytics
+google-analytics:
+  id: ""
 
-# Build settings
-markdown: kramdown
-highlighter: rouge # or pygments or null
-theme: jekyll-sleek
-exclude:
-  - README.md
-  - node_modules
-  - package.json
-  - package-lock.json
-  - Gemfile
-  - Gemfile.lock
-  - vendor
-  - npm-debug.log
-  - gulpfile.js
-  - sleek.png
-
-include: ['_pages']
-permalink: /:title/
-
-compress_html:
-  clippings: all
-
-plugins:
-  - jekyll-sitemap
-  - jekyll-seo-tag
+exclude: ['package.json', 'src' , 'node_modules']
