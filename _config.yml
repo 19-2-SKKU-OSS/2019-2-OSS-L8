@@ -20,6 +20,7 @@ markdown: kramdown
 highlighter: rouge # or pygments or null
 theme: jekyll-sleek
 exclude:
+  - 1.txt
   - README.md
   - node_modules
   - package.json
