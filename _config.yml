@@ -1,20 +1,23 @@
 # Site settings
-title: Mauricio Urraco
-description: Jekyll Theme Minimal Resume
-# baseurl: "" # the subpath of your site, e.g. /blog
-# url: "localhost:3000" # the base hostname & protocol for your site e.g. http://willianjusten.com.br
+title: "Joon: Roon for Jekyll"
+logo: logo.png # image from https://www.flickr.com/photos/lwr/5496279831/in/set-72157594159055823
+email: your-email@domain.com
+description: > # this means to ignore newlines until "url:"
+  Roon was an excellent service, with a beautiful understated design. After
+  being acquired by <a href='https://ghost.org'>Ghost</a>, the Roon theme was
+  open sourced.<br> This is my Jekyll port of the Roon theme.
+url: "http://vormwald.github.io" # the base hostname & protocol for your site
+baseurl: "/joon" # the subpath of your site, e.g. /blog/
+twitter_username: jekyllrb
+github_username:  jekyll
 
-# User settings
-username: Mauricio Urraco
-user_description: I\'m a nomad Software Engineer, always searching for the next challenge; no task is too scary nor too difficult. Lately I have been immersed in the <b>crypto-world</b> working for Radix, a London based startup trying to create the next massive scalable DLT. I'm one of the two guys behind all the JS related stuff. Visit my blog here <a href="https://mauriciourraco.com" target="_blank">https://mauriciourraco.com</a>
-user_title: Software Engineer
-email: mauriurraco@gmail.com
-# twitter_username: lorem_ipsum
-# github_username:  lorem_ipsum
-# gplus_username:  lorem_ipsum
+permalink: pretty
+paginate: 5
 
-# Google-analytics
-google-analytics:
-  id: ""
+# Build settings
+markdown: kramdown
+highlighter: rouge
 
-exclude: ['package.json', 'src' , 'node_modules']
+gems:
+  - jekyll-sitemap
+  - jekyll-paginate

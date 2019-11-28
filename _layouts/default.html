@@ -1,13 +1,36 @@
 <!DOCTYPE html>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/konpa/devicon@df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
-<html lang="en">
+<html>
+
   {% include head.html %}
-  <body>
-      {% include header.html %}
-      <section id="about">
-        {% include about.html %}
-      </section>
-        {{ content }}
-      {% include footer.html %}
+
+  <body class="{{ page.body_class }}">
+
+    {{ content }}
+
+    {{ if site.logo}}
+    <a href="{{ site.baseurl | prepend: site.url }}" id="blog_badge">
+            <span style="background-image:
+            url('{{ site.baseurl }}/assets/images/{{ site.logo }}');">{{ site.name }}</span>
+        </a>
+    {{/if}}
+
+    <script>
+      function no_schema_links () {
+        var links = document.querySelectorAll('.js-remove-domain-schema');
+        if (links) {
+          for (i = 0; i < links.length; ++i) {
+            var link = links[i],
+              text = link.innerHTML,
+            no_schema = text.replace(/.*?:\/\//g, "");
+            link.innerHTML = no_schema;
+          }
+        }
+      }
+
+      window.onload = function () {
+        no_schema_links();
+      }
+    </script>
   </body>
+
 </html>

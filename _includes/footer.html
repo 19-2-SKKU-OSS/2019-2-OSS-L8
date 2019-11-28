@@ -1,8 +1,30 @@
-<footer class="footer">
-    <!-- <p>&copy; {{ site.username }}</p> -->
-    <p>Build with Jekyll and <span class="love">❤</span> by <a href="https://github.com/murraco">Mauricio Urraco</a></p>
+<footer role="contentinfo" class='post-footer'>
+    <div class="inner">
+        <div class="vcard">
+          <a href="{{ site.baseurl }}/feed.xml" id="btn_feed" class="btn" title="Feed" target="_blank">
+                <span aria-hidden="true" data-icon=")"></span>
+                <strong>Feed</strong>
+            </a>
+
+            {% if site.logo %}
+            <a href="{{ site.baseurl }}" class="photo circle">
+              <span style="background-image: url('{{ site.baseurl }}/assets/images/{{ site.logo }}');">
+                <img src="{{ site.baseurl }}/assets/images/{{ site.logo }}" alt="{{ site.title }}"/>
+              </span>
+            </a>
+            {% endif %}
+
+            <div class="details">
+                <h4><a href="{{ site.url }}" class="url n">{{ site.title }}</a></h4>
+                <a href="{{ site.baseurl | prepend: site.url }}" class="js-remove-domain-schema">{{ site.url }}{{ site.baseurl }}</a><br>
+                <span>Published with <a href="https://jekyllrb.com">Jekyll</a></span><br>
+                <span><a href='https://github.com/vormwald/joon'>Source code</a></span>
+            </div>
+        </div>
+        <div id="user_bio">
+            <div class="inner">
+                {{ site.description }}
+            </div>
+        </div>
+    </div>
 </footer>
-<script src="//cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-<script src="{{ '/assets/js/sweet-scroll.min.js' | prepend: site.baseurl }}"></script>
-<script src="{{ '/assets/js/main.js' | prepend: site.baseurl }}"></script>
-{% include google-analytics.html %}
