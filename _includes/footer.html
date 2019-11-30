@@ -1,30 +1,19 @@
-<footer role="contentinfo" class='post-footer'>
-    <div class="inner">
-        <div class="vcard">
-          <a href="{{ site.baseurl }}/feed.xml" id="btn_feed" class="btn" title="Feed" target="_blank">
-                <span aria-hidden="true" data-icon=")"></span>
-                <strong>Feed</strong>
-            </a>
+<div class="page__footer-follow">
+  <ul class="social-icons">
+    {% if site.data.ui-text[site.locale].follow_label %}
+      <li><strong>{{ site.data.ui-text[site.locale].follow_label }}</strong></li>
+    {% endif %}
 
-            {% if site.logo %}
-            <a href="{{ site.baseurl }}" class="photo circle">
-              <span style="background-image: url('{{ site.baseurl }}/assets/images/{{ site.logo }}');">
-                <img src="{{ site.baseurl }}/assets/images/{{ site.logo }}" alt="{{ site.title }}"/>
-              </span>
-            </a>
-            {% endif %}
+    {% if site.footer.links %}
+      {% for link in site.footer.links %}
+        {% if link.label and link.url %}
+          <li><a href="{{ link.url }}" rel="nofollow noopener noreferrer"><i class="{{ link.icon | default: 'fas fa-link' }}" aria-hidden="true"></i> {{ link.label }}</a></li>
+        {% endif %}
+      {% endfor %}
+    {% endif %}
 
-            <div class="details">
-                <h4><a href="{{ site.url }}" class="url n">{{ site.title }}</a></h4>
-                <a href="{{ site.baseurl | prepend: site.url }}" class="js-remove-domain-schema">{{ site.url }}{{ site.baseurl }}</a><br>
-                <span>Published with <a href="https://jekyllrb.com">Jekyll</a></span><br>
-                <span><a href='https://github.com/vormwald/joon'>Source code</a></span>
-            </div>
-        </div>
-        <div id="user_bio">
-            <div class="inner">
-                {{ site.description }}
-            </div>
-        </div>
-    </div>
-</footer>
+    <li><a href="{% if site.atom_feed.path %}{{ site.atom_feed.path }}{% else %}{{ '/feed.xml' | relative_url }}{% endif %}"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].feed_label | default: "Feed" }}</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; {{ site.time | date: '%Y' }} {{ site.name | default: site.title }}. {{ site.data.ui-text[site.locale].powered_by | default: "Powered by" }} <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
