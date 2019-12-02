@@ -14,7 +14,12 @@ from random import *
 from turtle import *
 from freegames import path
 
-car = path('car.gif')
+image = {'car':path('car.gif'), 'sea':path('sea.gif'), 'jellyfish':path('jellyfish.gif')}
+# image_dic = {'car':"C:\\Users\\박민주\\atom_html\\python\\freegames\\car.gif",
+#             'sea':"C:\\Users\\박민주\\atom_html\\python\\freegames\\sea.gif",
+#             'jellyfish':"C:\\Users\\박민주\\atom_html\\python\\freegames\\jellyfish.gif"}
+image = choice(list(image_dic.values()))
+
 tiles = list(range(32)) * 2
 state = {'mark': None}
 hide = [True] * 64
@@ -55,7 +60,7 @@ def draw():
     "Draw image and tiles."
     clear()
     goto(0, 0)
-    shape(car)
+    shape(image)
     stamp()
 
     for count in range(64):
@@ -77,7 +82,7 @@ def draw():
 
 shuffle(tiles)
 setup(420, 420, 370, 0)
-addshape(car)
+addshape(image)
 hideturtle()
 tracer(False)
 onscreenclick(tap)
