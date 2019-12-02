@@ -1,0 +1,11 @@
+coverage
+doc8
+gj
+pylint
+pytest
+pytest-cov
+rstcheck
+sphinx
+tox
+twine
+wheel

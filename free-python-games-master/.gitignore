@@ -1,0 +1,18 @@
+# Python byte-code
+*.py[co]
+
+# virutalenv directories
+/env*/
+
+# coverage files
+.coverage
+
+# setup, test and upload directories
+/.cache/
+/.tox/
+/build/
+/dist/
+/docs/_build/
+/freegames.egg-info/
+
+.DS_Store
