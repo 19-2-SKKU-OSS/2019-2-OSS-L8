@@ -3,23 +3,26 @@ Exercises:
 1. Count and print how many taps occur.
 2. Decrease the number of tiles to a 4x4 grid.
 3. Detect when all tiles are revealed.
-4. Center single-digit tile.
+4. Center single-digit tile. - solved.
 5. Use letters instead of tiles.
 """
 
 from random import *
 from turtle import *
+from time import *
+from sys import *
 from freegames import path
 
 image = {'car':path('car.gif'), 'sea':path('sea.gif'), 'jellyfish':path('jellyfish.gif')}
 # image_dic = {'car':"C:\\Users\\박민주\\atom_html\\python\\freegames\\car.gif",
-#           'sea':"C:\\Users\\박민주\\atom_html\\python\\freegames\\sea.gif",
-#            'jellyfish':"C:\\Users\\박민주\\atom_html\\python\\freegames\\jellyfish.gif"}
+#             'sea':"C:\\Users\\박민주\\atom_html\\python\\freegames\\sea.gif",
+#             'jellyfish':"C:\\Users\\박민주\\atom_html\\python\\freegames\\jellyfish.gif"}
 image = choice(list(image_dic.values()))
 
 tiles = list(range(32)) * 2
 state = {'mark': None}
 hide = [True] * 64
+revealed_tiles = 0
 
 def square(x, y):
     "Draw white square with black outline at (x, y)."
@@ -52,6 +55,8 @@ def tap(x, y):
         hide[spot] = False
         hide[mark] = False
         state['mark'] = None
+        global revealed_tiles
+        revealed_tiles += 2
 
 def draw():
     "Draw image and tiles."
@@ -66,6 +71,14 @@ def draw():
             square(x, y)
 
     mark = state['mark']
+
+    if(revealed_tiles >= 64):
+        up()
+        goto(-130, 0)
+        write('All tiles were detected', font=('Arial', 25, 'normal'))
+        sleep(5)
+        exit()
+
 
     if mark is not None and hide[mark] is not False:
         x, y = xy(mark)
