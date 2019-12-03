@@ -12,12 +12,9 @@ Exercises:
 
 from random import *
 from turtle import *
-# from freegames import path
+from freegames import path
 
-# image = {'car':path('car.gif'), 'sea':path('sea.gif'), 'jellyfish':path('jellyfish.gif')}
-image_dic = {'car':"C:\\Users\\박민주\\atom_html\\python\\freegames\\car.gif",
-            'sea':"C:\\Users\\박민주\\atom_html\\python\\freegames\\sea.gif",
-            'jellyfish':"C:\\Users\\박민주\\atom_html\\python\\freegames\\jellyfish.gif"}
+image = {'car':path('car.gif'), 'sea':path('sea.gif'), 'jellyfish':path('jellyfish.gif')}
 image = choice(list(image_dic.values()))
 
 tiles = list(range(32)) * 2
