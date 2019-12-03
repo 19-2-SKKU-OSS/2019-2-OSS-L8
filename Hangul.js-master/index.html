@@ -3,25 +3,37 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Hangul.js</title>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sunflower:300,500&display=swap&subset=korean">
     <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.2.1.css">
 		<style>
 			#str{
 				width:500px;
 				height:100px;
 			}
+			#submitButton{
+				border: 1px solid skyblue;
+				border-top-left-radius: 5px;
+				border-bottom-left-radius: 5px;
+				border-top-right-radius: 5px;
+				border-bottom-right-radius: 5px;
+				background-color: rgba(0,0,0,0);
+				color: skyblue; padding: 5px;
+			}
+			#submitButton:hover{
+				color:white; background-color: skyblue;
 		</style>
 	</head>
 	<body>
 		<div id="qunit"></div>
     <div id="qunit-fixture"></div>
-		<h2><code>Hangul.assemble(Hangul.disassemble(str) === str // for well-formed Hangul-string str</code></h2>
+		<h2></code></h2>
 		<form id="test1">
-			<h3>str</h3>
-			<textarea id="str" placeholder="str"></textarea>
-			<button type="submit">Hangul.assemble(Hangul.disassemble(str))</button>
-			<h3>disassemble result</h3>
+			<h3>자음과 모음 분리할 문장 입력</h3>
+			<textarea id="str" placeholder="str">문장을 입력하세요.</textarea>
+			<button id="submitButton" type="submit" style="cursor:pointer">입력</button>
+			<h4>결과</h4>
 			<div id="test1-result1"></div>
-			<h3>asssemble result</h3>
+			<h4>재조합된 문장 결과</h4>
 			<div id="test1-summary2">
 			</div>
 			<div id="test1-result2">
