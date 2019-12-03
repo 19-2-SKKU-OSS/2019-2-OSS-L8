@@ -1,23 +1,20 @@
 """Memory, puzzle game of number pairs.
-
 Exercises:
-
 1. Count and print how many taps occur.
 2. Decrease the number of tiles to a 4x4 grid.
 3. Detect when all tiles are revealed.
 4. Center single-digit tile.
 5. Use letters instead of tiles.
-
 """
 
 from random import *
 from turtle import *
-from freegames import path
+# from freegames import path
 
-image = {'car':path('car.gif'), 'sea':path('sea.gif'), 'jellyfish':path('jellyfish.gif')}
-# image_dic = {'car':"C:\\Users\\박민주\\atom_html\\python\\freegames\\car.gif",
-#             'sea':"C:\\Users\\박민주\\atom_html\\python\\freegames\\sea.gif",
-#             'jellyfish':"C:\\Users\\박민주\\atom_html\\python\\freegames\\jellyfish.gif"}
+# image = {'car':path('car.gif'), 'sea':path('sea.gif'), 'jellyfish':path('jellyfish.gif')}
+image_dic = {'car':"C:\\Users\\박민주\\atom_html\\python\\freegames\\car.gif",
+            'sea':"C:\\Users\\박민주\\atom_html\\python\\freegames\\sea.gif",
+            'jellyfish':"C:\\Users\\박민주\\atom_html\\python\\freegames\\jellyfish.gif"}
 image = choice(list(image_dic.values()))
 
 tiles = list(range(32)) * 2
@@ -73,7 +70,9 @@ def draw():
     if mark is not None and hide[mark] is not False:
         x, y = xy(mark)
         up()
-        goto(x + 2, y)
+        if(tiles[mark] < 10):
+            goto(x + 15, y)
+        else: goto(x + 2, y)
         color('black')
         write(tiles[mark], font=('Arial', 30, 'normal'))
 
