@@ -2,7 +2,7 @@
 Exercises:
 1. Count and print how many taps occur.
 2. Decrease the number of tiles to a 4x4 grid.
-3. Detect when all tiles are revealed.
+3. Detect when all tiles are revealed. - solved
 4. Center single-digit tile. - solved.
 5. Use letters instead of tiles.
 """
