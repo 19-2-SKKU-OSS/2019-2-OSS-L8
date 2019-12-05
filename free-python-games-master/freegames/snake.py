@@ -14,6 +14,7 @@ from random import randrange
 from freegames import square, vector
 
 food = vector(0, 0)
+trash = vector(0, 100)
 snake = [vector(10, 0)]
 aim = vector(0, -10)
 
@@ -38,12 +39,27 @@ def move():
 
     snake.append(head)
 
+    check = 0
+
     if head == food:
         print('Snake:', len(snake))
         food.x = randrange(-15, 15) * 10
         food.y = randrange(-15, 15) * 10
+    elif head == trash:
+        if len(snake) == 1:
+            check = check + 1
+        else:
+            clear()
+            snake.pop(2)
+            print('Snake:', len(snake))
+            trash.x = randrange(-15, 15) * 10
+            trash.y = randrange(-15, 15) * 10
     else:
-        snake.pop(0)
+       snake.pop(0)
+
+    if check == 1:
+        update()
+        return
 
     clear()
 
@@ -51,6 +67,7 @@ def move():
         square(body.x, body.y, 9, 'black')
 
     square(food.x, food.y, 9, 'green')
+    square(trash.x, trash.y, 9, 'red')
     update()
     ontimer(move, 100)
 
@@ -64,3 +81,4 @@ onkey(lambda: change(0, 10), 'Up')
 onkey(lambda: change(0, -10), 'Down')
 move()
 done()
+
