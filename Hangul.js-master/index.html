@@ -4,11 +4,37 @@
 		<meta charset="utf-8">
 		<title>Hangul.js</title>
 		<link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.2.1.css">
-		<link rel="stylesheet" href="/test/style.css">
 		<style>
 			#str{
-				width:500px;
-				height:40px;
+				border-radius: 5px;
+				width:300px;
+				height:50px;
+			}
+			#test1{
+				margin:10px;
+				color:#6a6f8c;
+				background:#c8c8c8;
+				font:600 16px/18px 'Open Sans',sans-serif;
+			}
+
+			#firstTitle{
+				width:100%;
+				margin:auto;
+				max-width:400px;
+				min-height:50px;
+				position:center;
+				box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);
+
+				color: #D3D3D3;
+				background-color: #0D3349;
+				text-align: center;
+				font-size: 1.8em;
+				line-height: 2em;
+				font-weight: 400;
+
+
+
+				border-radius: 5px 5px 5px 5px;
 			}
 			#submitButton{
 				border: 1px solid skyblue;
@@ -30,7 +56,7 @@
     <div id="qunit-fixture"></div>
 		<h2><code></code></h2>
 		<form id="test1">
-			<h3>자음과 모음 분리할 문장 입력</h3>
+			<h3 id="firstTitle">자음과 모음 분리할 문장 입력</h3>
 			<textarea id="str" placeholder="str">문장을 입력하세요.</textarea>
 			<button id="submitButton" type="submit" style="cursor:pointer">입력</button>
 			<br>
