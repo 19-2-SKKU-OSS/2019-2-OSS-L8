@@ -11,12 +11,21 @@ Exercises
 import random
 from turtle import *
 
+
 """get number of digits to play"""
 def get_num_digit():
     digits = 0
-    digits = int(input("Enter Number of Digits to Play (max 9) : "))
-    while digits < 1 or digits > 9:
-        digits = int(input("Invalid Digit. Put a Number Between 1 to 9 : "))
+    print("Enter Number of Digits to Play (max 9) : ", end='')
+    while True:
+        try:
+            digits = int(input())
+        except ValueError:
+            print("You Should Input Only Numbers. Input : ", end='')
+        else:
+            if digits < 1 or digits > 9:
+                print("Invalid Digit. Put a Number Between 1 to 9 : ", end='')
+            else:
+                break
 
     return digits
 
@@ -28,8 +37,25 @@ def generate_ran_ans(num_of_digits):
 
 """get user answer from user"""
 def get_user_ans(right_ans_):
-    user_ans_ = list(input("Enter %d-digit number : " % len(right_ans_)))
-    return list(map(int, user_ans_))
+    user_ans = []
+    valid = False
+
+    user_input = input("Please Enter %d-digits : " % len(right_ans_))
+    for pos in range(len(user_input)):
+        if user_input[pos] < '0' or user_input[pos] > '9':
+            valid = True
+
+    while valid:
+        user_input = input("Please Enter Only Numbers. Enter %d-digits : " % len(right_ans_))
+        valid = False
+        for pos in range(len(user_input)):
+            if user_input[pos] < '0' or user_input[pos] > '9':
+                valid = True
+
+    for pos in range(len(user_input)):
+        user_ans.append(int(user_input[pos]))
+
+    return user_ans
 
 
 """check if user answer is in right format"""
@@ -42,7 +68,7 @@ def check_format(user_ans_, right_ans_):
     """return 2 for not a number"""
     for pos in range(len(user_ans_)):
         if user_ans_[pos] < 1 or user_ans_[pos] > 9:
-            print("Not a Valid Number!")
+            print("Not a Valid Number! Zero is Not Included")
             return False
 
     """return 3 for repeated number"""
@@ -70,9 +96,7 @@ def compare_user_ans(right_ans_, user_ans_):
 
 
 num_of_digits = get_num_digit()
-print("%d" % num_of_digits)
 right_ans = generate_ran_ans(num_of_digits)
-print(right_ans)
 correct = False
 trials = 1
 
