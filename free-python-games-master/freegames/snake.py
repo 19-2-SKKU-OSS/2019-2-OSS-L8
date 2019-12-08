@@ -47,14 +47,14 @@ def move():
         food.y = randrange(-15, 15) * 10
 
     elif head == trash:
+        snake.pop(0)
+        snake.pop(0)
+        print('Snake:', len(snake))
         if len(snake) == 0:
             print('Game End')
-            uodate()
+            update()
             return
         else:
-            snake.pop(0)
-            snake.pop(0)
-            print('Snake:', len(snake))
             trash.x = randrange(-15, 15) * 10
             trash.y = randrange(-15, 15) * 10
     else:
