@@ -1,20 +1,23 @@
 """Memory, puzzle game of number pairs.
-
 Exercises:
-
 1. Count and print how many taps occur.
 2. Decrease the number of tiles to a 4x4 grid.
 3. Detect when all tiles are revealed.
 4. Center single-digit tile.
 5. Use letters instead of tiles.
-
 """
 
 from random import *
 from turtle import *
+from time import *
+from sys import *
 from freegames import path
 
-image = {'car':path('car.gif'), 'sea':path('sea.gif'), 'jellyfish':path('jellyfish.gif')}
+image_dic = {}
+image_dic['car'] = path('car.gif')
+image_dic['sea'] = path('sea.gif')
+image_dic['jellyfish'] = path('jellyfish.gif')
+
 image = choice(list(image_dic.values()))
 
 tiles = list(range(32)) * 2
