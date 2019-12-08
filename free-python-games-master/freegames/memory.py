@@ -13,17 +13,16 @@ from time import *
 from sys import *
 from freegames import path
 
-"Make image dictionary with 3 images"
 image_dic = {}
 image_dic['car'] = path('car.gif')
 image_dic['sea'] = path('sea.gif')
 image_dic['jellyfish'] = path('jellyfish.gif')
+
 image = choice(list(image_dic.values()))
 
 tiles = list(range(32)) * 2
 state = {'mark': None}
 hide = [True] * 64
-revealed_tiles = 0
 
 def square(x, y):
     "Draw white square with black outline at (x, y)."
@@ -56,8 +55,6 @@ def tap(x, y):
         hide[spot] = False
         hide[mark] = False
         state['mark'] = None
-        global revealed_tiles
-        revealed_tiles += 2
 
 def draw():
     "Draw image and tiles."
@@ -73,20 +70,10 @@ def draw():
 
     mark = state['mark']
 
-    if(revealed_tiles >= 64):
-        up()
-        goto(-130, 0)
-        write('All tiles were detected', font=('Arial', 25, 'normal'))
-        sleep(5)
-        exit()
-
-
     if mark is not None and hide[mark] is not False:
         x, y = xy(mark)
         up()
-        if(tiles[mark] < 10):
-            goto(x + 15, y)
-        else: goto(x + 2, y)
+        goto(x + 2, y)
         color('black')
         write(tiles[mark], font=('Arial', 30, 'normal'))
 
