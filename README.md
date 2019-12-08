@@ -46,13 +46,20 @@ Hangul.a(Hangul.d('옽ㅏ')); // '오타' ('옽ㅏ' 가 아님)
 
 *게임 예시*
 
-**Snake**
+-**Snake** 
+
 <img src="https://camo.githubusercontent.com/b189b47e1146da6f14f72b1d5d16ad5185ad072e/687474703a2f2f7777772e6772616e746a656e6b732e636f6d2f646f63732f6672656567616d65732f5f7374617469632f736e616b652e676966" width="200" height="200"> 
-**Paint**
+
+-**Paint** 
+
 <img src="http://www.grantjenks.com/docs/freegames/_static/paint.gif" width="200" height="200"> 
-**Pacman**
+
+-**Pacman** 
+
 <img src="http://www.grantjenks.com/docs/freegames/_static/pacman.gif" width="200" height="200">
-**Flappy**
+
+-**Flappy**
+
 <img src="http://www.grantjenks.com/docs/freegames/_static/flappy.gif" width="200" height="200">
 
 
@@ -63,6 +70,5 @@ Hangul.a(Hangul.d('옽ㅏ')); // '오타' ('옽ㅏ' 가 아님)
     * 테스트 페이지의 디자인을 수정합니다.
 - **Free Python Games**
     * Snake 게임의 기능들을 추가합니다.
-    * Tiles 게임에서 타일의 개수를 추가함으로써 난이도를 올립니다.
     * Baseball 게임을 새로 만든 후 추가합니다.
     * Memory 게임의 오류를 수정하고 기능들을 추가합니다.
