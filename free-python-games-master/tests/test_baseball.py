@@ -1,6 +1,9 @@
 """Baseball, Guess N digit number.
 
 Exercises
+1. How can we make it difficult?
+2. How many digits are most difficult?
+3. Change it to allow repeated numbers.
 
 """
 
