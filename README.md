@@ -48,7 +48,7 @@ Hangul.a(Hangul.d('옽ㅏ')); // '오타' ('옽ㅏ' 가 아님)
 
 -**Snake**                   -**Paint** 
 
-<img src="https://camo.githubusercontent.com/b189b47e1146da6f14f72b1d5d16ad5185ad072e/687474703a2f2f7777772e6772616e746a656e6b732e636f6d2f646f63732f6672656567616d65732f5f7374617469632f736e616b652e676966" width="200" height="200"> <img src="http://www.grantjenks.com/docs/freegames/_static/paint.gif" width="200" height="200"> 
+<img src="https://github.com/19-2-SKKU-OSS/2019-2-OSS-L8/blob/master/free-python-games-master/docs/_static/Snake__.gif" width="200" height="200"> <img src="http://www.grantjenks.com/docs/freegames/_static/paint.gif" width="200" height="200"> 
 
 -**Pacman**                  -**Flappy**
 
