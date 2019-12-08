@@ -35,31 +35,30 @@ def move():
     if not inside(head) or head in snake:
         square(head.x, head.y, 9, 'red')
         update()
+        print('Game End')
         return
 
     snake.append(head)
 
-    check = 0
 
     if head == food:
         print('Snake:', len(snake))
         food.x = randrange(-15, 15) * 10
         food.y = randrange(-15, 15) * 10
+
     elif head == trash:
-        if len(snake) == 1:
-            check = check + 1
+        if len(snake) == 0:
+            print('Game End')
+            uodate()
+            return
         else:
-            clear()
-            snake.pop(2)
+            snake.pop(0)
+            snake.pop(0)
             print('Snake:', len(snake))
             trash.x = randrange(-15, 15) * 10
             trash.y = randrange(-15, 15) * 10
     else:
        snake.pop(0)
-
-    if check == 1:
-        update()
-        return
 
     clear()
 
