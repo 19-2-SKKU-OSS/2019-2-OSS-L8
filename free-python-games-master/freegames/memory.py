@@ -18,7 +18,6 @@ image_dic = {}
 image_dic['car'] = path('car.gif')
 image_dic['sea'] = path('sea.gif')
 image_dic['jellyfish'] = path('jellyfish.gif')
-
 image = choice(list(image_dic.values()))
 
 tiles = list(range(32)) * 2
