@@ -13,6 +13,7 @@ from time import *
 from sys import *
 from freegames import path
 
+"Make image dictionary with 3 images"
 image_dic = {}
 image_dic['car'] = path('car.gif')
 image_dic['sea'] = path('sea.gif')
