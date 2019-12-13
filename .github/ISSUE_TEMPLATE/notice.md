@@ -1,8 +1,8 @@
 ---
 name: Notice
 about: Notice of overall project
-title: ''
-labels: documentation, enhancement
+title: "[NOTICE]"
+labels: documentation
 assignees: wyuinche
 
 ---
