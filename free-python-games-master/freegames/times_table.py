@@ -3,11 +3,13 @@ Exercises:
 1. Increase the range of x, y.
 2. Make a score board.
 3. Make time limitation to answer.
-4. Game End function
+4. Implement 'Stage Clear'
 """
 
 from time import *
 from random import *
+
+life = 5
 
 print("Tell me the answer!\n")
 
@@ -17,6 +19,10 @@ while true:
     x = randrange(1, 20)
     y = randrange(1, 20)
     correct = x * y #answer
+
+    if life == 0:
+        print("Loss!")
+        break
 
     # answer the question
     print(x + "X" + y + " = ")
@@ -30,4 +36,5 @@ while true:
     if correct == user_input :
         print("Correct!")
     else
+        global life--
         print("Wrong answer! The answer is " + correct)
